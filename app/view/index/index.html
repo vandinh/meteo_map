@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Carte météo</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="img/favicon/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="img/favicon/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="img/favicon/favicon.png">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </head>
+    <body ng-app="meteoMap"  ng-controller="cityCtrl">
+        <!-- Map Block // background to use map.png -->
+        <div id="map" ng-controller="citiesCtrl">
+            <div ng-if="cities" ng-repeat="c in cities.list| limitTo:6">
+                <!-- Note Block // Little "note" on the map with main informations -->
+                <div class="note block-icon pos{{ $index}}">
+                    <div class="float-left">
+                        <i class="icon icon-{{ c.weather}}"></i>
+                    </div>
+                    <div class="float-left">
+                        <h4>{{ c.name}}</h4>          
+                        <h5 class="float-left mr-1">{{ c.temp.main}}°</h5>
+                        <h5 class="float-right">
+                            <a ng-click="details(c.href)" href="#">voir détails</a>
+                        </h5>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- End Block -->
+            </div>
+            <div ng-if="!cities">
+                <div class="note block-icon error">
+                    <h3>Aucune ville</h3>
+                </div>
+            </div>
+        </div>
+        <!-- End Block -->
+
+        <!-- Wrap Sidebar Block -->
+        <div class="wrap-sidebar">
+            <!-- Sidebar Block // When clicked on any note to see more details -->
+            <div class="sidebar" ng-if="city">
+                <!-- Details block // Big block with every details from one note -->
+                <div class="details">
+                    <!-- Sidebar's header // Details about city and weather -->
+                    <div class="header px-2">
+                        <div class="block-icon">
+                            <div class="float-left">
+                                <i class="icon icon-{{ city.weather}} small"></i>                            
+                            </div>
+                            <div class="float-left">
+                                <h4>{{ city.name}}</h4>
+                                <h5>{{ city.weather}}</h5>    
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar's content // The main writted things -->
+                    <div class="content">
+                        <h1>{{ city.temp.main}}°</h1>
+                    </div>
+
+                    <!-- Sidebar's footer // More details about weather -->
+                    <div class="footer">
+                        <div class="float-left block-icon mr-2">                        
+                            <div class="float-left">
+                                <i class="icon icon-wind x-small"></i>                    
+                            </div>
+                            <div class="float-left">
+                                <h4>vent nord</h4>
+                                <h5>{{ city.wind.speed}}km/h</h5>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="float-right block-icon">               
+                            <div class="float-left">
+                                <i class="icon icon-humidity x-small"></i>                
+                            </div>
+                            <div class="float-left">
+                                <h4>humidite</h4>
+                                <h5>{{ city.temp.humidity}}%</h5>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- End Block -->
+
+                <!-- Sidebar's date // Outside the big block, enable to select date to see details' weather for any day -->
+                <div class="date">
+                    <h5>
+                        <i class="icon icon-angle-left float-left"></i>
+                        {{ city.date | date: "dd MMM yyyy" }}
+                        <i class="icon icon-angle-right float-right"></i>
+                    </h5>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- End Block -->
+        </div>
+        <!-- End Block -->
+
+        <div class="clearfix"></div>
+
+    </body>
+</html>

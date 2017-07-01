@@ -1,0 +1,275 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?yf3nyt');
+    src:  url('../fonts/icomoon.eot?yf3nyt#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?yf3nyt') format('truetype'),
+        url('../fonts/icomoon.woff?yf3nyt') format('woff'),
+        url('../fonts/icomoon.svg?yf3nyt#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+    Icon style
+*/
+
+
+.icon-clear:before {
+    content: "\e900";
+    color: inherit;
+}
+.icon-cloud:before {
+    content: "\e901";
+    color: inherit;
+}
+.icon-clouds:before {
+    content: "\e904";
+    position: relative;
+    top: -5px;
+    color: inherit;
+}
+.icon-rain:before {
+    content: "\e902";
+    color: inherit;
+}
+.icon-drizzle:before {
+    content: "\e903";
+    color: inherit;
+}
+.icon-arrow-left:before {
+    content: "\f060";
+    color: inherit;
+}
+.icon-arrow-right:before {
+    content: "\f061";
+    color: inherit;
+}
+.icon-angle-left:before {
+    content: "\f104";
+    color: inherit;
+}
+.icon-angle-right:before {
+    content: "\f105";
+    color: inherit;
+}
+.icon-long-arrow-left:before {
+    content: "\f177";
+    color: inherit;
+}
+.icon-long-arrow-right:before {
+    content: "\f178";
+    color: inherit;
+}
+.icon-thunderstorm:before {
+    content: "\e905";
+    color: inherit;
+}
+.icon-humidity:before {
+    content: "\e906";
+    color: inherit;
+}
+.icon-wind:before {
+    content: "\e907";
+    color: inherit;
+}
+
+i.tiny { font-size: 1rem; }
+i.x-small { font-size: 2rem; }
+i.small { font-size: 3rem; }
+i.medium { font-size: 4rem; }
+i.large { font-size: 6rem; }
+
+/*
+    Site web style
+*/
+* { margin: 0; padding: 0; }
+html, body{
+    font-family: 'Work Sans', sans-serif;
+    color: #656565;
+}
+
+.clearfix{
+    clear: both;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.w100{
+    width: 100%;
+}
+.mr-1 {
+    margin-right: 10px;
+} 
+.mr-2 {
+    margin-right: 20px;
+}
+.px-2 {
+    padding: 0 20px;
+}
+
+/*
+    Main block-icon style
+*/
+.block-icon{
+    overflow: hidden;
+    text-transform: uppercase;
+    display: table;
+    text-align: left;
+}
+.block-icon i {
+    float: left;
+    margin-right: 10px;
+}
+.block-icon h4, .block-icon h5 {
+    font-size: 0.7rem;
+}
+
+/*
+    Map style
+*/
+#map{
+    position: relative;
+    margin: 20px;
+    float: left;
+    width: 490px;
+    height: 440px;
+    background-image: url('../../img/map.png');
+    z-index: 10;
+}
+
+/*
+    Note style
+*/
+.note {
+    position: absolute;
+    overflow: hidden;
+    padding: 10px;
+    color: #CCC;
+    background: rgba(0,0,0,0.8);    
+}
+.note i{
+    font-size: 2rem;
+}
+.note .sub {
+    width: 100%;
+}
+.note a{
+    color: inherit;
+}
+.error {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.error h3 {
+    text-align: center;
+}
+
+/* Position for note */
+.pos0{
+    top: 400px;
+    left: 350px;
+}
+.pos1{
+    top: 50px;
+    left: 100px;
+}
+.pos2{
+    top: 160px;
+    left: 50px;
+}
+.pos3{
+    top: 100px;
+    left: 350px;
+}
+.pos4{
+    top: 300px;
+    left: 180px;
+}
+.pos5{
+    top: 200px;
+    left: 290px;
+}
+
+/*
+    Sidebar style
+*/
+.wrap-sidebar {
+    width: 100%;
+    transform: translateY(50%);
+    z-index: 1;
+}
+.sidebar {
+    display: table;
+    margin: auto;
+}
+.sidebar .details{
+    border-top: 2px solid #656565;
+    border-bottom: 2px solid #656565;
+    padding: 20px 0;
+}
+.details .header {
+    width: auto;
+    margin: 10px 0;
+}
+.details .header .block-icon {
+    display: table;
+    margin: auto;
+    width: auto;
+    text-align: left;
+}
+.details .content h1{
+    margin: 0;
+    text-align: center;
+    font-size: 90px;
+    font-weight: 100;
+}
+.details .footer{    
+    margin: 10px 0;
+}
+.wind i, .humidity i{
+    font-size: 2rem;
+}
+/*
+    From sidebar
+*/
+.date {
+    padding: 20px;
+    text-align: center;
+}
+.date h5{    
+    font-size: 1rem;
+    width: 80%;
+    margin: 0 auto;
+}
+.date i {
+    font-size: 2rem;
+    line-height: 0.5;
+}

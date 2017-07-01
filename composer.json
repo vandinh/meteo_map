@@ -1,0 +1,20 @@
+{
+    "name": "vandinh/meteo_map",
+    "description": "A map with cities and meteo's information",
+    "authors": [
+        {
+            "name": "Florian Van Dinh",
+            "email": "fvandinh@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "app/core/",
+            "Controller\\": "app/controller/"
+        }
+    },
+    "require": {
+        "symfony/http-foundation": "^3.3",
+        "symfony/routing": "^3.3"
+    }
+}
